@@ -1,0 +1,27 @@
+{%extends "class/base.html"%}
+
+{%block content%}
+    <table>
+        <tr>
+            <th> Company_name</th>
+            <th> Discreption </th>
+            <th> Details </th>
+            <th> Last Date </th>
+            <th> Application Url </th>
+            <th> Selcted Students</th>
+            <th> Published Date </th> 
+        </tr>
+        {%for company in entries_list%}
+        <tr>
+            <td> {{company.Company_name}} </td>
+            <td> {{company.discreption}}</td>
+            <td> <a href="{%url 'class:Entry_detail' pk=company.pk%}"> Company Details </a></td>
+            <td> {{company.last_date}}</td>
+            <td> <a href="{{company.application_url}}">Click Here</a></td>
+            <td> <a href = "{%url 'class:selected_students' pk=company.pk%}">Click to View List</a></td>
+            <td> {{company.published_date}} </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+{%endblock%}

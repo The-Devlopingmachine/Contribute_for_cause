@@ -1,0 +1,29 @@
+{%extends "users/base.html"%}
+{%load crispy_forms_tags %}
+{%block content%}
+
+<div class="register-parent">
+
+   <div class="register-parent2">
+        <form method="POST">
+            <!-- including the csrf token -->
+            {%csrf_token%}
+            <fieldset class="">
+                <legend class="register-heading"> Login </legend>
+                {{form|crispy}}
+            </fieldset>
+
+            <div id="submit-parent">
+                <button type="submit" class="submit"> Login </button>
+            </div>
+        </form>
+    </div>
+    <div id="already-account">
+        <span> Don't have an account! </span>
+        <a class="link" href="{%url 'users:register' %}"> Register </a>
+    </div>
+</div>
+
+
+
+{%endblock%}

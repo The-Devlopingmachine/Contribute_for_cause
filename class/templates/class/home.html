@@ -1,27 +1,23 @@
 {%extends "class/base.html"%}
 
+{%load static%}
+
 {%block content%}
-    <table>
-        <tr>
-            <th> Company_name</th>
-            <th> Discreption </th>
-            <th> Details </th>
-            <th> Last Date </th>
-            <th> Application Url </th>
-            <th> Selcted Students</th>
-            <th> Published Date </th> 
-        </tr>
-        {%for company in entries_list%}
-        <tr>
-            <td> {{company.Company_name}} </td>
-            <td> {{company.discreption}}</td>
-            <td> <a href="{%url 'class:Entry_detail' pk=company.pk%}"> Company Details </a></td>
-            <td> {{company.last_date}}</td>
-            <td> <a href="{{company.application_url}}">Click Here</a></td>
-            <td> <a href = "{%url 'class:selected_students' pk=company.pk%}">Click to View List</a></td>
-            <td> {{company.published_date}} </td>
-        </tr>
-        {%endfor%}
-    </table>
+
+<div class = "parent">
+    {%for company in entries_list%}
+    <div class="child"> 
+            <div style="text-align: center; font-size: 30px; font-weight: 600;"> {{company.Company_name}} </div>
+            <div style="margin-top: 10px; font-size: 16px;"> {{company.discreption}} </div>
+            <div style = "background-color: white; border-radius: 17px; text-align: center; margin-top: 5px;"> <a href="{%url 'class:Entry_detail' pk=company.pk%}"> Company Detail </a></div>
+            <div style="font-weight: 600;  margin-top: 5px"> Last date to apply {{company.last_date}} </div>
+            <div style="background-color: rgba(255, 0, 0, 0.267); text-align: center;  margin-top: 5px"> <a href="{{company.application_url}}">Click Here to apply</a> </div>
+            <div style="background-color: lightblue; text-align: center;  margin-top: 5px"> <a href = "{%url 'class:selected_students' pk=company.pk%}">Click to View List of eligible students</a></div>
+            <div>Published date {{company.published_date}} </div>
+    </div>
+    {%endfor%}
+    
+</div>
+        
 
 {%endblock%}
