@@ -64,6 +64,19 @@
                 x.className = "topnav";
             }
         }
+
+    function facebook_share() {
+
+        let facebook_share_url = "http://www.facebook.com/sharer.php?u=" + window.location.href;
+        window.location.assign(facebook_share_url)
+        window.location = facebook_share_url
+    }
+
+    function whatsapp_share() {
+        let whatsapp_share_url = "whatsapp://send?text=" + "Hey checkout this amazing article on profdcsharma.com      ->" + window.location.href;
+        window.open(whatsapp_share_url)
+    }
+
     </script>
 
 </html>

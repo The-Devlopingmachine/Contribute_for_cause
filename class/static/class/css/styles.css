@@ -168,3 +168,8 @@
     box-shadow: 0 30px 50px 0 rgb(1 1 1 / 15%);
   
 }
+#post-deatil-social-media {
+  margin-left: 10px;
+  display: inline;
+  place-items: center;
+}
