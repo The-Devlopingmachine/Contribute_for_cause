@@ -133,8 +133,23 @@
 
 @media only screen and (max-width: 1024px)
 {
-    .style_image
+  .style_image
   {
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;margin-top: 5vh;
+
+  }
+}
+
+/* For bigger screens*/
+@media only screen and (min-width: 1025px)
+{
+  .style_image
+  {
+    margin-top: 5vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -143,15 +158,13 @@
   }
 }
 
-/* For bigger screens*/
-@media only screen and (min-width: 1025px)
+.post_deatil-body
 {
-    .style_image
-  {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 50% ;
-  }
+    font-size: 20px;
+    color: #0e0a0adc;
+    font-family: Opensans;
+    background-color: white;
+    width: 100vw;
+    box-shadow: 0 30px 50px 0 rgb(1 1 1 / 15%);
+  
 }
