@@ -1,0 +1,14 @@
+{%extends "class/base.html"%}
+
+{%load crispy_forms_tags %}
+
+{%block content%}
+    <form method="POST" style="margin-top: 30px;">
+        {%csrf_token%}
+        {{form.media}}
+        <div class="new-post" style ="width: 80vw; margin-left: 5vw;">
+            {{form|crispy}}
+        </div>
+        <button type="submit" style="display: grid; place-items: center; font-size: x-large; margin-left: 20vw; margin-bottom: 5vw; width: 17vw; color: black;"> Post </button>
+    </form>
+{%endblock%}

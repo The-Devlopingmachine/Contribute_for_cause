@@ -1,6 +1,7 @@
+from django.forms import fields
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import View, TemplateView, ListView
+from django.views.generic import View, TemplateView, ListView, CreateView
 from .models import Entry
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -25,7 +26,13 @@ def Entry_detail(request, pk):
 
     return render(request, "class/entry_detail.html", {"entry": entry})
 
+
 def selected_students(request, pk):
     entry = Entry.objects.get(pk=pk)
 
     return render(request, "class/selected_students.html", {"entry": entry})
+
+class CreateCause(CreateView):
+    model = Entry
+    template_name = 'class/Add_cause.html'
+    fields = '__all__'
